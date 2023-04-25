@@ -1,0 +1,18 @@
+function rot13(str) {
+  let newStr='';
+const alphabets = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+let divStr = str.split('');
+
+for(let i = 0; i < divStr.length; i++){
+  let index = alphabets.indexOf(divStr[i])
+  if (index !== -1){
+    let newIndex = (index + 13) % 26;
+    newStr += alphabets[newIndex];
+  }else{
+    newStr += divStr[i];
+  }
+}
+return newStr
+}
+
+rot13("SERR PBQR PNZC");
